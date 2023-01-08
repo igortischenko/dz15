@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getPolindrom(numb) {
+            let steps = 0;
+            let result = findPolindrom(numb);
+
+            function findPolindrom(numb) {
+                let reverse = +Array.from(numb.toString()).reverse().join('');
+
+                if (numb == reverse) return numb;
+
+                steps++
+                return findPolindrom(numb + reverse);
+            }
+
+
+            return { result, steps }
+        }
+    </script>
+</body>
+</html>
